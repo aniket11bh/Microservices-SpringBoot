@@ -1,0 +1,35 @@
+server:
+ port: 8080
+  
+spring:
+ application:
+  name: app11
+
+logging:
+ level:
+  org.springframework.security: DEBUG
+  com.netflix.discovery: OFF
+
+
+security:
+ user:
+  password: user
+ ignored: /,/favicon.ico,/index.html,/home.html,/dashboard.html,/js/**,/css/**,/webjars/**
+ sessions: ALWAYS
+ oauth2:
+  sso:
+   loginPath: /login
+management:
+ security:
+  role: HERO
+
+ oauth2:
+  client:
+   clientId: 26988ca29db1633e7368
+   clientSecret: 8579621f0023b5dd29c95b6d2b238096a5676c50
+   accessTokenUri: https://github.com/login/oauth/access_token
+   userAuthorizationUri: https://github.com/login/oauth/authorize
+   clientAuthenticationScheme: form
+   resource:
+    userInfoUri: https://api.github.com/user
+    preferTokenInfo: false
